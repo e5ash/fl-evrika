@@ -3,7 +3,7 @@
 @import reset
 @import grid
 
-@import ../components/button/button
+@import ../components/btn/btn
 @import ../components/field/field
 @import ../components/check/check
 @import ../components/select/select
@@ -17,3 +17,1223 @@
 
 .overflow-disable
 	overflow: hidden
+
+.swiper-button-disabled
+	cursor: default !important
+
+.arrow
+	cursor: pointer
+	transition: .3s
+	position: relative
+	&.swiper-button-disabled
+		opacity: 0.5
+	// &.--prev
+	// 	&:hover
+	// 		svg
+	// 			margin-left: -5px
+	// &.--next
+	// 	&:hover
+	// 		svg
+	// 			margin-right: -5px
+.img
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.header
+	padding-top: 25px
+	padding-bottom: 25px
+	&__wrap
+		align-items: center
+	&__logo
+		display: block
+		width: 230px
+		height: 86px
+		border-bottom: none
+	&__nav
+		margin-left: auto
+		margin-right: auto
+		ul
+			margin-left: -30px
+			margin-right: -30px
+		li
+			position: relative
+			margin-left: 30px
+			margin-right: 30px
+			&:before
+				position: absolute
+				content: ''
+				width: 0
+				height: 1px
+				transition: .4s
+				bottom: -10px
+				left: 50%
+				background-color: #000
+				transform: translateX(-50%)
+			&:hover
+				&:before
+					width: 50px
+
+		a
+			position: relative
+			&:before, &:after
+				content: attr(data-text)
+				display: inline-block
+				font-size: 14px
+				line-height: 18px
+				color: #848484
+				letter-spacing: 0.165em
+				transition: .4s
+			&:after
+				opacity: 0
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-left: -2px
+				transform: translate(-50%, -50%)
+			&:hover
+				&:before
+					opacity: 0
+				&:after
+					opacity: 1
+					font-size: 18px
+					// line-height: 23px
+					color: #000000
+
+
+
+	&__controls
+		align-items: center
+
+	&__control
+		width: 41px
+		height: 41px
+		border-radius: 50%
+		margin-right: 6px
+		&:last-of-type
+			margin-right: 0
+
+
+.control
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 7px
+	border: 0.5px solid transparent
+	&:hover
+		border-color: #000
+	&__icon
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+
+
+.auth
+	z-index: 10
+	position: absolute
+	top: 75px
+	right: 90px
+	padding: 50px 45px
+	background-color: #fff
+	width: 450px
+	transition: .3s
+	opacity: 0
+	visibility: hidden
+	&.--show
+		opacity: 1
+		visibility: visible
+	&__title
+		font-family: $fm
+		font-size: 24px
+		line-height: 30px
+		margin-bottom: 45px
+	&__close
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		position: absolute
+		top: 55px
+		right: 52px
+		width: 20px
+		height: 20px
+		cursor: pointer
+		&:before, &:after
+			display: block
+			content: ''
+			width: 24px
+			height: 1px
+			position: relative
+			background-color: #000
+			transition: .3s
+		&:before
+			// top:
+			transform: rotate(45deg)
+		&:after
+			top: -1px
+			transform: rotate(-45deg)
+		&:hover
+			&:before, &:after
+				top: 0
+				transform: rotate(0deg)
+
+	&__field
+		margin-bottom: 45px
+
+	&__btn
+		margin-top: 10px
+
+	&__links
+		justify-content: space-between
+		margin-top: 20px
+	&__link
+		font-size: 12px
+		line-height: 15px
+		letter-spacing: 0.165em
+		border-bottom: 1px solid transparent
+		&:hover
+			border-color: #000
+	&__desc
+		margin-top: 10px
+		font-size: 10px
+		line-height: 12px
+		color: #AEAEAE
+		max-width: 300px
+		font-family: $fm
+		a
+			color: #AEAEAE
+			border-color: lighten(#AEAEAE, 20%)
+			&:hover
+				color: #000
+				border-color: #000
+
+
+
+.search
+	padding: 25px 0 60px
+	&__wrap
+		position: relative
+		width: 100%
+		max-width: 736px
+		margin-left: auto
+		margin-right: auto
+	&__btn
+		width: 25px
+		height: 25px
+		position: absolute
+		top: 50%
+		left: 0
+		opacity: 0.5
+		transform: translateY(-50%)
+		&:hover
+			opacity: 1
+	&__field
+		.field
+			&__area
+				padding-left: 40px
+
+
+.h2
+	font-size: 24px
+	line-height: 30px
+	color: #DC7172
+	margin-bottom: 27px
+
+
+.collection
+	display: flex
+	// align-items: flex-start
+	border-bottom: 1px solid rgba(0,0,0,0.5)
+	&__wrap
+		width: 730px
+	&__text
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		padding-top: 20px
+	&__title
+		font-size: 96px
+		line-height: 90px
+		text-transform: uppercase
+		// text-align: right
+		font-family: $fr
+		margin-left: auto
+		max-width: 600px
+		font-weight: 900
+		// display: inline-block
+		// margin-right: 20px
+		span
+			font-size: 101px
+			line-height: 120px
+			-webkit-text-stroke: 1px #000
+			text-stroke: 1px #000
+			color: transparent
+			position: relative
+			display: inline-block
+	&__desc
+		font-family: $fm
+		line-height: 17px
+		padding-right: 28px
+		text-align: right
+	&__img
+		position: relative
+		width: calc(100% - 730px)
+		img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			object-position: center top
+		
+	&__inner
+		margin-top: 40px
+		padding: 40px 0 25px
+		margin-left: 30px
+		margin-right: 30px
+		border-top: 1px solid rgba(0,0,0,0.5)
+	&__list
+		// overflow: hidden
+	&__arrows
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 10px
+	&__arrow
+		width: 50px
+		height: 50px
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-left: 14px
+		margin-right: 14px
+		cursor: pointer
+		transition: .3s
+		&.swiper-button-disabled
+			opacity: 0.5
+
+
+.product
+	height: auto
+	&:after
+		display: block
+		content: ''
+		left: 50%
+		height: 1px
+		width: 0
+		background: transparent
+		transform: translateX(-50%)
+		margin-top: 15px
+		position: relative
+		transition: .3s
+	&__counter
+		font-size: 18px
+		line-height: 23px
+		padding-bottom: 10px
+	&__inner
+		// height: 100%
+		border: 1px solid #000
+		position: relative
+
+	&__data
+		display: flex
+		flex-direction: column
+		z-index: 1
+		position: relative
+		transition: .3s
+		border-top: 1px solid #000
+	&__name
+		transition: .3s
+	&__sizes
+		margin-top: auto
+	&__foot
+		align-items: center
+	&__price
+		font-size: 18px
+		line-height: 23px
+		transition: .3s
+	&__btn-add
+		margin-left: auto
+		position: relative
+		transition: .3s
+		border: 0.5px solid transparent
+		
+	
+	&.--sm
+		.product
+			&__imgs-wrap
+				height: 140px
+				display: flex
+				align-items: flex-end
+				justify-content: center
+				font-size: 0
+				margin-bottom: -1px
+			&__inner
+				border-color: rgba(0,0,0,0.5)
+			&__data
+				height: calc(100% - 140px)
+			&__imgs
+				height: 130px
+			&__data
+				padding: 10px 9px 10px
+			&__name
+				font-size: 14px
+				line-height: 18px
+				text-transform: capitalize
+				margin-bottom: 7px
+			&__foot
+				margin-top: 15px
+			&__btn-add
+				position: relative
+				width: 26px
+				height: 26px
+				display: flex
+				align-items: center
+				justify-content: center
+				cursor: pointer
+				svg
+					position: absolute
+					top: 50%
+					left: 50%
+					transition: .3s
+					transform: translate(-50%, -50%) scale(0)
+					&:nth-of-type(1)
+						transform: translate(-50%, -50%) scale(1)
+
+		.imgs
+			&__arrow
+				width: 20px
+				height: 20px
+	&.--md
+		.product
+			&__imgs-wrap
+				height: 365px
+				display: flex
+				align-items: flex-end
+				justify-content: center
+				font-size: 0
+				margin-bottom: -1px
+			&__inner
+				border-color: rgba(0,0,0,0.5)
+			&__data
+				height: calc(100% - 365px)
+			&__imgs
+				height: 100%
+			&__data
+				padding: 10px 9px 10px
+			&__name
+				font-size: 14px
+				line-height: 18px
+				text-transform: capitalize
+				margin-bottom: 7px
+			&__sizes
+				.sizes
+					&__title				
+						margin-bottom: 2px
+			&__foot
+				margin-top: 5px
+			&__btn-add
+				position: relative
+				width: 40px
+				height: 40px
+				display: flex
+				align-items: center
+				justify-content: center
+				cursor: pointer
+				svg
+					position: absolute
+					top: 50%
+					left: 50%
+					transition: .3s
+					width: 18px
+					transform: translate(-50%, -50%) scale(0)
+					&:nth-of-type(1)
+						height: auto
+						transform: translate(-50%, -50%) scale(1)
+
+		.imgs
+			&__arrow
+				width: 40px
+				height: 40px
+				svg
+					width: 12px
+					height: 23px
+	&.--counter
+		.product
+			&__inner
+				height: calc(100% - 33px)
+
+	&.--added
+		&:after
+			width: 52%
+			background-color: #7DA19D
+		.product
+			&__inner
+				border-color: #7DA19D
+			&__data
+				border-color: #7DA19D
+			&__name
+				color: #7DA19D
+			&__sizes
+				.sizes
+					&__item
+						&.--checked
+							border-color: #7DA19D
+						&.--disabled
+							.sizes
+								&__value
+									color: #A3A3A3
+					&__value
+						color: #7DA19D
+			&__price
+				font-weight: 600
+				color: #7DA19D
+			&__btn-add
+				border-color: #7DA19D
+				svg
+					&:nth-of-type(1)
+						transform: translate(-50%, -50%) scale(0)
+					&:nth-of-type(2)
+						transform: translate(-50%, -50%) scale(1)
+				
+
+.imgs
+	&__img
+		display: flex
+		justify-content: center
+		align-items: flex-end
+	&__arrow
+		display: flex
+		align-items: center
+		justify-content: center
+		z-index: 5
+		position: absolute
+		top: 50%
+		transition: .3s
+		cursor: pointer
+		transform: translateY(-50%)
+		&.--prev
+			left: 0
+		&.--next
+			right: 0
+		&.swiper-button-disabled
+			opacity: 0.5
+
+		
+
+.sizes
+	&__title
+		font-size: 10px
+		line-height: 13px
+		text-transform: capitalize
+		opacity: 0.6
+	&__list
+		flex-wrap: nowrap
+		margin-left: -8px
+		margin-right: -8px
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 21px
+		min-width: 21px
+		height: 21px
+		border-radius: 50%
+		margin-left: 2px
+		margin-right: 2px
+		transition: .3s
+		border: 1px solid transparent
+		&.--disabled
+			color: #848484
+		&.--checked
+			border-color: #000
+	&__value
+		font-size: 11px
+		line-height: 13.5px
+		transition: .3s
+		
+
+.arrows
+	position: absolute
+	top: 50%
+	right: 10px
+	transform: translateY(-50%)
+	.arrow
+		&.--prev
+			margin-bottom: 10px	
+
+.section
+	padding-top: 60px
+	&__wrap
+		position: relative
+		padding-right: 100px
+	&__arrow
+		&.swiper-button-disabled
+			opacity: 0
+		
+
+
+.cats
+	padding-top: 60px
+	&__wrap
+		position: relative
+		width: 100%
+		max-width: 1370px
+		margin-left: auto
+		margin-right: auto
+		padding-left: 90px
+		padding-right: 90px
+
+	&__arrow
+		position: absolute
+		top: 105px
+		&.swiper-button-disabled
+			opacity: 0
+		&.--prev
+			left: 0
+		&.--next
+			right: 0
+		
+		
+	&__item
+		width: 217px
+		&:hover
+			.cats
+				&__img
+					&:before
+						width: 187px
+						height: 187px
+	&__img
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 217px
+		height: 217px
+		padding: 14px
+		border-radius: 50%
+		position: relative
+		margin-left: auto
+		margin-right: auto
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 217px
+			height: 217px
+			border: 1px solid #000
+			border-radius: 50%
+			transition: .3s
+			transform: translate(-50%, -50%)
+	&__name
+		font-size: 24px
+		line-height: 30px
+		text-align: center
+		text-transform: uppercase
+		margin-top: 24px
+
+.lb
+	padding-top: 60px
+	&__list
+		display: flex
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		z-index: 1
+		position: relative
+		height: 368px
+		overflow: hidden
+		&:hover
+			.lb
+				&__text
+					opacity: 0
+					filter: blur(5px)
+				&__img
+					transform: scale(1.2)
+	&__left
+		width: 57%
+	&__right
+		width: 43%
+	&__img
+		z-index: -1
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		transition: .9s
+	&__text
+		color: #fff
+		transition: .6s
+	&__name
+		// font-size: 200px
+		font-size: 64px
+		line-height: 81px
+		text-transform: uppercase
+		font-weight: 100
+	&__desc
+		margin-top: -5px
+		font-size: 36px
+		line-height: 45px
+		font-weight: 700
+
+
+.about
+	padding-top: 60px
+	padding-bottom: 135px
+	&__wrap
+		display: flex
+		align-items: flex-start
+		padding-top: 20px
+	&__img
+		width: 787px
+		height: 416px
+	&__text
+		max-width: 425px
+		margin-left: -48px
+		margin-top: 70px
+		background-color: #fff
+		padding: 49px 22px 39px
+		font-size: 18px
+		line-height: 22px
+		font-family: $fm
+		text-align: justify
+		border: 1px solid #000
+
+
+.subscribe
+	color: #fff
+	text-align: center
+	font-family: $fm
+	background-color: #7DA19D
+	padding: 40px 0
+	&__wrap
+		max-width: 800px
+		margin-left: auto
+		margin-right: auto
+	&__title
+		margin-bottom: 40px
+	&__form
+		display: flex
+	&__field
+		width: calc(100% - 235px)
+	&__btn
+		width: 235px
+	&__desc
+		margin-top: 40px
+		width: 100%
+		max-width: 725px
+		margin-left: auto
+		margin-right: auto
+		a
+			color: #fff
+			&:hover
+				border-color: #fff
+
+
+
+.footer
+	color: #fff
+	padding-top: 65px
+	background-color: #2D3134
+	&__top
+		padding-left: 30px
+	&__logo
+		margin-right: 110px
+	&__navs
+		width: 500px
+		justify-content: space-between
+	&__nav
+		ul
+			flex-direction: column
+		li
+			margin-bottom: 15px
+			&:last-of-type
+				margin-bottom: 0
+			&.--lg
+				a
+					font-size: 14px
+					line-height: 18px
+		a
+			color: #fff
+			font-size: 12px
+			line-height: 15px
+			letter-spacing: 0.165em
+			text-transform: uppercase
+			&:hover
+				border-color: #fff
+
+	&__contacts
+		margin-left: auto
+
+	&__bot
+		margin-top: 45px
+		padding-top: 45px
+		padding-bottom: 90px
+		padding-left: 30px
+		border-top: 1px solid rgba(255,255,255,0.5)
+
+	&__copy
+		font-size: 12px
+		line-height: 15px
+		letter-spacing: 0.165em
+
+	&__socials
+		margin-left: auto
+
+
+.f-contacts
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 13px
+		&:last-of-type
+			margin-bottom: 0
+	&__icon
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 18px
+		height: 18px
+	&__title
+		width: calc(100% - 18px)
+		padding-left: 12px
+		font-size: 14px
+		line-height: 18px
+		letter-spacing: 0.165em
+		a
+			color: #fff
+
+
+.socials
+	&__list
+		align-items: center
+		margin-left: -10px
+		margin-right: -10px
+	&__item
+		margin-left: 10px
+		margin-right: 10px
+		&:hover
+			transform: scale(0.8)
+
+@media screen and (max-width: 1400px)
+	.cats__wrap
+		padding-left: 60px
+		padding-right: 60px
+
+@media screen and (max-width: 1330px)
+	.cats__wrap
+		padding-left: 40px
+		padding-right: 40px
+
+@media screen and (max-width: 1300px)
+	.case
+		padding-left: 15px
+		padding-right: 15px
+
+	.header
+		padding-top: 15px
+		padding-bottom: 15px
+		&__logo
+			width: 200px
+			height: auto
+		&__nav
+			ul
+				margin-left: -15px
+				margin-right: -15px
+			li
+				margin-left: 15px
+				margin-right: 15px
+			
+
+	.collection
+		&__img
+			img
+				object-position: left top
+	
+
+	.arrows
+		right: 20px
+
+@media screen and (max-width: 1200px)
+	.product
+		&.--md
+			.product
+				&__imgs-wrap
+					height: 300px
+				&__data
+					height: calc(100% - 300px)
+
+
+@media screen and (max-width: 1120px)
+	.footer
+		padding-top: 40px
+		&__top
+			padding-left: 0
+		&__logo
+			width: 150px
+			margin-right: 30px
+		&__navs
+			width: 450px
+		&__bot
+			padding-left: 0
+			padding-top: 30px
+			padding-bottom: 30px
+
+@media screen and (max-width: 1100px)
+	.header
+		z-index: 100
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		background-color: #fff
+		border-bottom: 1px solid rgba(0,0,0,.1)
+		&__logo
+			width: 170px
+		&__controls
+			margin-left: auto
+		&__nav
+			z-index: 20
+			position: fixed
+			top: 93px
+			left: 0
+			right: 0
+			bottom: 0
+			height: 100%
+			background-color: #fff
+			transition: .3s
+			transform: translateY(100%)
+			&.--show
+				transform: translateY(0%)
+			ul
+				width: 100%
+				height: 100%
+				flex-direction: column
+				align-items: center
+				justify-content: center
+				margin-left: 0
+				margin-right: 0
+			li
+				margin: 0 0 30px
+			a
+				// font-size: 22px
+				&:before, &:after
+					font-size: 22px
+				&:hover
+					&:before
+						opacity: 1
+				&:after
+					display: none
+
+
+	.auth
+		padding: 30px
+		width: 400px
+		top: 80px
+		right: 0px
+		&__close
+			top: 35px
+			right: 30px
+
+	.search
+		padding-top: 120px
+		padding-bottom: 45px
+
+
+	.collection
+		position: relative
+		z-index: 1
+		&__wrap
+			width: 100%
+		&__img
+			display: none
+			z-index: -1
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			opacity: 0
+
+@media screen and (max-width: 910px)
+	.footer
+		padding-top: 25px
+		&__top
+			flex-direction: column
+			align-items: center
+		&__logo
+			margin-right: 0
+			margin-bottom: 25px
+		&__navs
+			width: 100%
+			max-width: 450px
+			text-align: center
+			justify-content: center
+			flex-direction: column
+		&__nav
+			margin-bottom: 10px
+			&:last-of-type
+				margin-bottom: 0
+			li
+				margin-bottom: 10px
+				&.--lg
+					a
+						font-size: 12px
+						line-height: 14px
+				a
+					font-size: 12px
+					line-height: 14px
+					
+						
+		&__contacts
+			margin-right: auto
+			margin-top: 30px
+		&__bot
+			margin-top: 25px
+
+
+@media screen and (max-width: 780px)
+	.collection
+		&__inner
+			margin-left: 15px
+			margin-right: 15px
+
+	.lb
+		&__list
+			flex-wrap: wrap
+		&__item
+			width: 100%
+			// height: 200px
+			margin-bottom: -2px
+
+
+	.about
+		padding-bottom: 45px
+
+@media screen and (max-width: 600px)
+	.collection
+		&__text
+			padding-top: 0
+		&__title
+			font-size: 62px
+			line-height: 62px
+			max-width: 390px
+			margin-bottom: 5px
+			span
+				font-size: 65px
+				line-height: 62px
+		&__inner
+			margin-top: 20px
+			padding-top: 25px
+
+		&__arrow
+			width: 30px
+			height: 30px
+
+	.about
+		&__wrap
+			flex-wrap: wrap
+		&__img
+			width: 100%
+		&__text
+			margin-left: 40px
+			margin-right: 40px
+			margin-top: -150px
+			width: auto
+			max-width: none
+
+@media screen and (max-width: 580px)
+	.header
+		.case
+			position: static
+
+	.auth
+		position: fixed
+		z-index: 30
+		width: 100%
+		top: 0
+		height: 100%
+		background-color: #fff
+	.section
+		padding-top: 25px
+		padding-bottom: 25px
+		border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+		&__wrap
+			padding-right: 0
+
+	.arrows
+		position: static
+		transform: none
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 26px
+		.arrow
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 30px
+			height: 30px
+			margin-left: 14px
+			margin-right: 14px
+			&.arrow.swiper-button-disabled
+				opacity: 0.5
+			&.--prev			
+				margin-bottom: 0
+			
+	.product
+		&__counter
+			display: none
+		&__inner
+			// flex-wrap: wrap
+			// display: flex
+			// flex-direction: column
+		&.--sm
+			.product
+				&__imgs
+					height: 100%
+		&.--md
+			// display: none
+			.product
+				&__inner
+					height: 100%
+				&__imgs-wrap
+					height: 140px
+				&__data
+					height: calc(100% - 140px)
+			.imgs
+				&__arrow
+					width: 20px
+					height: 20px
+					svg
+						width: 6px
+						height: 12px
+
+			
+	.cats
+		padding-top: 25px
+		&__title
+			// margin-bottom: 25px
+
+	.lb
+		padding-top: 45px
+
+
+	.subscribe
+		&__form
+			flex-direction: column
+		&__title
+			margin-bottom: 20px
+		&__desc
+			margin-top: 20px
+		&__field
+			width: 100%
+			margin-bottom: 10px
+			&.--lg
+				.field
+					&__area
+						padding-left: 20px
+						padding-right: 20px
+		&__btn
+			width: 100%
+
+
+	.footer
+		&__bot
+			flex-direction: column
+			padding-top: 0
+			padding-bottom: 20px
+			border-top: none
+			margin-top: 10px
+		&__copy
+			order: 2
+			margin-top: 15px
+			padding-top: 25px
+			text-align: center
+			border-top: 1px solid rgba(255, 255, 255, 0.5)
+		&__socials
+			margin-top: 10px
+			margin-right: auto
+
+@media screen and (max-width: 520px)
+	.lb
+		&__item
+			height: 200px
+			margin-bottom: -2px
+		&__name
+			font-size: 42px
+			left: 50px
+		&__desc
+			font-size: 32px
+			line-height: 32px
+@media screen and (max-width: 420px)
+	.case
+		padding-left: 10px
+		padding-right: 10px
+
+	.header
+		&__logo
+			width: 130px
+		&__control
+			width: 34px
+			height: 34px
+			padding: 3px
+		&__nav
+			top: 78px
+			
+
+	.search
+		padding-top: 90px
+		padding-bottom: 30px
+
+	.collection
+		&__inner
+			margin-left: 10px
+			margin-right: 10px
+
+
+	.cats
+		&__name
+			margin-top: 14px
+
+
+	.about
+		&__title
+			margin-bottom: 20px
+		&__img
+			height: 300px
+		&__text
+			padding: 15px
+			margin-left: 15px
+			margin-right: 15px
+			margin-top: -110px
+			
+
+
+
+@media screen and (max-width: 400px)
+	.collection
+		&__text
+			padding-top: 0
+		&__title
+			font-size: 48px
+			line-height: 48px
+			max-width: 295px
+			margin-bottom: 5px
+			span
+				font-size: 50px
+				line-height: 48px
+		&__desc
+			padding-right: 10px
+
+
+	.subscribe
+		padding-top: 20px
+		padding-bottom: 20px

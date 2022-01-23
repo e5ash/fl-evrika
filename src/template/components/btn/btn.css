@@ -1,0 +1,31 @@
+.btn {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Livvic", sans-serif;
+  overflow: hidden;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  border-bottom: none;
+  width: 100%;
+}
+.btn.--bg-black {
+  color: #fff;
+  background-color: #2D3134;
+}
+.btn.--bg-black:hover {
+  background-color: #000;
+}
+.btn.--md {
+  height: 59px;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.165em;
+}

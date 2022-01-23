@@ -1,3 +1,49 @@
 include mixins/style
 include mixins/script
 include mixins/breadcrumbs
+
+
+mixin product(cls, size = 'sm', imgs = [], name, price = '1 550 р', counter)
+	div(class=cls class="product swiper-slide" class='--' + size)
+		if (counter)
+			.product__counter= counter
+		.product__inner
+			.product__imgs-wrap
+				.product__imgs.imgs.swiper
+					.imgs__list.swiper-wrapper
+						each img in imgs
+							.imgs__img.swiper-slide
+								img(src='uploads/products/product-' + img + '.jpg' alt="")
+					.imgs__arrows
+						.imgs__arrow.--prev
+							<svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.161891 5.98399L5.42989 0.714798L5.83789 1.1228L0.920691 6.03959L5.81389 10.9324L5.46189 11.2852L0.161891 5.98399Z" fill="black"/></svg>
+						.imgs__arrow.--next
+							<svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.83811 5.98399L0.570109 0.714798L0.162109 1.1228L5.07931 6.03959L0.186109 10.9324L0.538109 11.2852L5.83811 5.98399Z" fill="black"/></svg>
+			.product__data
+				.product__name= name
+				.product__sizes.sizes
+					.sizes__title Размеры:
+					.sizes__list.row
+						.sizes__item.check
+							input.check__input(type="checkbox")
+							.sizes__value 42
+						.sizes__item.check
+							input.check__input(type="checkbox")
+							.sizes__value 44
+						.sizes__item.check
+							input.check__input(type="checkbox")
+							.sizes__value 46
+						.sizes__item.check
+							input.check__input(type="checkbox")
+							.sizes__value 48
+						.sizes__item.check.--disabled
+							input.check__input(type="radio")
+							.sizes__value 50
+						.sizes__item.check.--disabled
+							input.check__input(type="radio")
+							.sizes__value 52
+				.product__foot.row
+					.product__price= price
+					.product__btn-add
+						<svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6173 14.5291L10.8748 3.67023H1.99674L0.38208 14.5291H12.6173ZM2.40712 4.14623H10.4692L10.478 4.20199L12.0584 14.0518H0.9339L2.40712 4.14623Z" fill="black"/><path d="M6.40662 0.863525C8.03862 0.863525 8.35108 2.57509 8.398 2.93107L8.78832 2.93345C8.76418 2.73829 8.67952 2.21945 8.4252 1.73087C7.99612 0.906365 7.29912 0.470825 6.40662 0.470825C5.51412 0.470825 4.81304 0.906025 4.37614 1.72883C4.11638 2.21843 4.02628 2.73829 3.99976 2.93379H4.38974C4.4456 2.57272 4.56046 2.22329 4.72974 1.89951C5.1 1.21203 5.66406 0.863525 6.40662 0.863525Z" fill="black"/></svg>
+						<svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6544 1.31101L16.8414 1.12551L16.2499 0.544006L5.47744 11.35L0.720947 6.59501L0.158447 7.14501L5.49644 12.456C8.62544 9.32801 11.7549 6.20067 14.8849 3.07401C15.4746 2.48601 16.0644 1.89834 16.6544 1.31101Z" fill="#7DA19D"/></svg>

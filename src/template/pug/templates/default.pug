@@ -8,6 +8,7 @@ html(lang="ru")
 		title=title
 	body
 		.wrap
+			link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
 			link(rel="stylesheet" href="template/css/style.css" + version)
 
 			+style('header', 'blocks')
@@ -20,4 +21,10 @@ html(lang="ru")
 			+style('footer', 'blocks')
 			include ../../blocks/footer/footer
 
+
+			+script('field', 'components')
+			+script('check', 'components')
+			
+
+			<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 			script(src="template/js/common.js" + version)

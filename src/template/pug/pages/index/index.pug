@@ -7,4 +7,118 @@ block vars
 			[title]
 		]
 block content
-	
+	.collection
+		.collection__wrap
+			.collection__text
+				.collection__title коллекция #[span осень 2021]
+				.collection__desc Комфорт в одежде опять с нами. #[br]Стильная, модная и удобная одежда -  #[br]выбор дизайнеров компании.
+			.collection__inner.swiper
+				.collection__subtitle.h2 НОВЫЕ ПОСТУПЛЕНИЯ
+				.collection__list.swiper-wrapper
+					+product('collection__item', 'sm', ['1', '2'], 'Джемпер «некст»')
+					+product('collection__item', 'sm', ['2', '1'], 'Юбка «Ханна (55)»')
+					+product('collection__item', 'sm', ['3', '4'], 'Юбка «Ханна (55)»')
+					+product('collection__item', 'sm', ['4', '3'], 'Юбка «Ханна (55)»')
+					+product('collection__item', 'sm', ['1', '2'], 'Джемпер «некст»')
+					+product('collection__item', 'sm', ['2', '1'], 'Юбка «Ханна (55)»')
+					+product('collection__item', 'sm', ['3', '4'], 'Юбка «Ханна (55)»')
+					+product('collection__item', 'sm', ['4', '3'], 'Юбка «Ханна (55)»')
+
+				.collection__arrows
+					.collection__arrow.arrow.--prev
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6771 0.994995L11.7321 1.98L3.62511 10.3H31.0371V11.694H3.56211L11.6761 20.027L10.6791 21.005L0.962107 11.002L10.6771 0.994995Z" fill="black"/></svg>
+					.collection__arrow.arrow.--next
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3229 0.994995L20.2679 1.98L28.3749 10.3H0.962891V11.694H28.4379L20.3239 20.027L21.3209 21.005L31.0379 11.002L21.3229 0.994995Z" fill="black"/></svg>
+		.collection__img.img
+			img(src="uploads/collection-main-img.jpg" alt="")
+
+
+	.section
+		.case
+			.section__title.h2  ХИТЫ ПРОДАЖ
+			.section__wrap
+				.section__inner.swiper
+					.section__list.swiper-wrapper
+						+product('section__item', 'md --counter', ['5', '6'], 'Платье «Изи»', '1 550 р', '01')
+						+product('section__item', 'md --counter', ['6', '5'], 'Джемпер «Бони»', '1 990 р', '02')
+						+product('section__item', 'md --counter', ['7', '5'], 'Джемпер «Бони»', '2 550 р', '03')
+						+product('section__item', 'md --counter', ['8', '6'], 'Джемпер «Тенси»', '899 р', '04')
+						+product('section__item', 'md --counter', ['5', '6'], 'Платье «Изи»', '1 550 р', '05')
+						+product('section__item', 'md --counter', ['6', '5'], 'Джемпер «Бони»', '1 990 р', '06')
+						+product('section__item', 'md --counter', ['7', '5'], 'Джемпер «Бони»', '2 550 р', '07')
+						+product('section__item', 'md --counter', ['8', '6'], 'Джемпер «Тенси»', '899 р', '08')
+				.section__arrows.arrows
+					.section__arrow.arrow.--prev
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6771 0.994995L11.7321 1.98L3.62511 10.3H31.0371V11.694H3.56211L11.6761 20.027L10.6791 21.005L0.962107 11.002L10.6771 0.994995Z" fill="black"/></svg>
+					.section__arrow.arrow.--next
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3229 0.994995L20.2679 1.98L28.3749 10.3H0.962891V11.694H28.4379L20.3239 20.027L21.3209 21.005L31.0379 11.002L21.3229 0.994995Z" fill="black"/></svg>
+
+
+	.cats
+		.case
+			.cats__title.h2 КОЛЛЕКЦИИ
+			.cats__wrap
+				.cats__inner.swiper
+					.cats__list.swiper-wrapper
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-1.png" alt="")
+							.cats__name ЗИМА 2021
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-2.png" alt="")
+							.cats__name весна 2021
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-3.png" alt="")
+							.cats__name лето 2021
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-4.png" alt="")
+							.cats__name осень 2021
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-5.png" alt="")
+							.cats__name ЗИМА 2020
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-1.png" alt="")
+							.cats__name весна 2020
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-2.png" alt="")
+							.cats__name лето 2020
+						a.cats__item.swiper-slide(href="")
+							.cats__img
+								img(src="uploads/cats/cat-3.png" alt="")
+							.cats__name осень 2020
+				.cats__arrows
+					.cats__arrow.arrow.--prev
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6771 0.994995L11.7321 1.98L3.62511 10.3H31.0371V11.694H3.56211L11.6761 20.027L10.6791 21.005L0.962107 11.002L10.6771 0.994995Z" fill="black"/></svg>
+					.cats__arrow.arrow.--next
+						<svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3229 0.994995L20.2679 1.98L28.3749 10.3H0.962891V11.694H28.4379L20.3239 20.027L21.3209 21.005L31.0379 11.002L21.3229 0.994995Z" fill="black"/></svg>
+
+
+	.lb
+		.case
+			.lb__title.h2 LOOKBOOK
+		.lb__list
+			a.lb__item.lb__left(href="")
+				.lb__text
+					.lb__name LOOKBOOK
+					.lb__desc 2021/22
+				.lb__img.img
+					img(src="uploads/lb/lb-2021-2022.jpg" alt="")
+			a.lb__item.lb__right(href="")
+				.lb__text
+					.lb__name eco
+				.lb__img.img
+					img(src="uploads/lb/lb-eco.jpg" alt="")
+
+	.about
+		.case
+			.about__title.h2 ОБ ЭВРИКЕ
+			.about__wrap
+				.about__img.img
+					img(src="uploads/about-img.jpg" alt="")
+				.about__text #[strong Evrika]  - это стильная одежда для тех, кто ценит лаконичность и практичность. #[br]Соберите свой безупречный гардероб вместе с нами. #[br]Ощутите на себе красоту и комфорт, которые Evrika вкладывает в каждое своё изделие
